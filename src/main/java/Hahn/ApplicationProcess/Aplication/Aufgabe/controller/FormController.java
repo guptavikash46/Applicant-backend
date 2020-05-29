@@ -17,7 +17,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,11 +29,7 @@ import Hahn.ApplicationProcess.Aplication.Aufgabe.services.AddApplicantService;
 import Hahn.ApplicationProcess.Aplication.Aufgabe.services.DeleteApplicantService;
 import Hahn.ApplicationProcess.Aplication.Aufgabe.services.GetApplicantByIdService;
 import Hahn.ApplicationProcess.Aplication.Aufgabe.services.UpdateApplicantService;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.Example;
-import io.swagger.annotations.ExampleProperty;
 
 @RestController
 @CrossOrigin(origins = "*")
