@@ -1,5 +1,7 @@
 package Hahn.ApplicationProcess.Aplication.Aufgabe;
 
+import org.springframework.boot.actuate.trace.http.HttpTraceRepository;
+import org.springframework.boot.actuate.trace.http.InMemoryHttpTraceRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -44,6 +46,12 @@ public class SwaggerConfig implements WebMvcConfigurer{
     @Override
 	public void addViewControllers(ViewControllerRegistry registry) {
         registry.addRedirectViewController("/swagger", "/swagger-ui.html");
+    }
+
+    //actuator configuration
+    @Bean
+    public HttpTraceRepository httpTraceRepository() {
+        return new InMemoryHttpTraceRepository();
     }
 
 }

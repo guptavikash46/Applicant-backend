@@ -88,8 +88,8 @@ public class FormController {
         else return result;
     }
 
-    @PutMapping("/app/update-applicant-details/{id}")
-    public ResponseEntity<Object> updateApplicantById(@ApiParam(value = "Enter the id", example = "3235") @PathVariable(value = "id") int id, 
+    @PutMapping("/app/update-applicant-details")
+    public ResponseEntity<Object> updateApplicantById(@ApiParam(value = "Enter the id", example = "3235") @RequestParam(value = "id") int id, 
     @ApiParam(value = "Your name",example ="vikas") @RequestParam(value = "name") @Size(min = 5, message = "Name must be atleast 5 characters long.") String name,
     @ApiParam(value = "Your family name",example ="vicky") @RequestParam(value = "familyName") @Size(min = 5, message = "family Name must be atleast 5 characters long.") String familyName,
     @ApiParam(value = "Your address",example ="my random address") @RequestParam(value = "address") @Size(min = 10, message = "Address must be 10 atleast characters long.") String address, 
