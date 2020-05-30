@@ -36,7 +36,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     protected ResponseEntity<Object> handleConstraintViolation(ConstraintViolationException ex, 
     WebRequest request){
         List<ApiValidationError> validationErrors = new ArrayList<>();
-        String errorMsg = "Bad request made because invalid values were input.";
+        String errorMsg = "Bad request was made because invalid values were input.";
         Set<ConstraintViolation<?>> constraintErrors = ex.getConstraintViolations();
         for(ConstraintViolation<?> constaints: constraintErrors){
             ApiValidationError apiValidationError = new ApiValidationError(constaints.getRootBeanClass().getSimpleName(),

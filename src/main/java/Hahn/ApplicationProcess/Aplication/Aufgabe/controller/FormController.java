@@ -50,9 +50,9 @@ public class FormController {
     @PostMapping("/app/add-applicant")
     public ResponseEntity<Object> addApplicant(@ApiParam(value = "Your name",example ="vikas") @RequestParam(value = "name") @Size(min = 5, message = "Name must be atleast 5 characters long.") String name,
             @ApiParam(example = "vicky", value = "Your family name") @RequestParam(value = "familyName") @Size(min = 5, message = "family Name must be atleast 5 characters long.") String familyName,
-            @ApiParam(example = "random address here", value = "Your Address") @RequestParam(value = "address") @Size(min = 10, message = "Address must be 10 atleast characters long.") String address, 
+            @ApiParam(example = "random address here", value = "Your Address") @RequestParam(value = "address") @Size(min = 10, message = "Address must be atleast 10 characters long.") String address, 
             @ApiParam(example = "India", value = "Your Country of Origin") @RequestParam(value = "countryOfOrigin") String countryOfOrigin,
-            @ApiParam(example = "xyz@gmail.com", value = "Your email") @RequestParam(value = "emailAddress") @Email(message = "Must be a valid email address.") String emailAddress, 
+            @ApiParam(example = "xyz@gmail.com", value = "Your email") @RequestParam(value = "emailAddress") @NotNull(message = "Email cannot be empty.") @Email(message = "Must be a valid email address including @ sign.") String emailAddress, 
             @ApiParam(example = "24", value = "Your Age") @RequestParam(value = "age") @Min(value = 20, message = "Minimum age must be more than 20")  @Max(value = 60, message = "Maximum age must be less than 60") int age,
             @ApiParam(example = "true", value = "Add your hired status") @RequestParam(value = "hired") @NotNull(message = "Hired status cannot be empty.") Boolean hired) {
 
